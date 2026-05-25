@@ -1,0 +1,23 @@
+projection;
+ use draft;
+
+ define behavior for ZC_RAP_Travel_2208 alias Travel
+ use etag
+ {
+   use create;
+   use update;
+   use delete;
+
+   use association _Booking { create; with draft; }
+
+
+ }
+
+ define behavior for ZC_RAP_Booking_2208 alias Booking
+ use etag
+ {
+   use update;
+   use delete;
+
+   use association _Travel { with draft; }
+ }
